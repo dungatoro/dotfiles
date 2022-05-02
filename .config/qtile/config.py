@@ -135,7 +135,8 @@ group_names = ["minus", "equal", "comma", "period", "f", "c", "m", "g"]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 "]
-group_labels = ["하나", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟",]
+#group_labels = ["하나", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟",]
+group_labels = ["๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
@@ -219,8 +220,8 @@ def init_widgets_list():
     widgets_list = [
                widget.GroupBox(
                         font="FontAwesome",
-                        fontsize = 18,
-                        margin_y = 2,
+                        fontsize = 24,
+                        margin_y = -1,
                         margin_x = 0,
                         padding_y = 7,
                         padding_x = 5,
@@ -374,33 +375,7 @@ floating_types = ["notification", "toolbar", "splash", "dialog"]
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-    Match(wm_class='Arcolinux-welcome-app.py'),
-    Match(wm_class='Arcolinux-tweak-tool.py'),
-    Match(wm_class='Arcolinux-calamares-tool.py'),
-    Match(wm_class='confirm'),
-    Match(wm_class='dialog'),
-    Match(wm_class='download'),
-    Match(wm_class='error'),
-    Match(wm_class='file_progress'),
-    Match(wm_class='notification'),
-    Match(wm_class='splash'),
-    Match(wm_class='toolbar'),
-    Match(wm_class='Arandr'),
-    Match(wm_class='feh'),
-    Match(wm_class='Galculator'),
-    Match(wm_class='arcolinux-logout'),
-    Match(wm_class='xfce4-terminal'),
-
-],  fullscreen_border_width = 0, border_width = 0)
+floating_layout = layout.Floating(float_rules=[ ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True
 
 focus_on_window_activation = "focus" # or smart
