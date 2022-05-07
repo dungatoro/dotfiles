@@ -46,13 +46,15 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'gko/vim-coloresque'
 Plug 'psliwka/vim-smoothie'
 Plug 'mhinz/vim-startify'
+Plug 'dungatoro/base16-vim'
 call plug#end()
 
 " ***PLUGIN SETTINGS***
 
 " rose pine theme
-colorscheme rose-pine
+"colorscheme rose-pine
 
+colorscheme base16-paradise-light
 " custom bar
 let g:airline_theme = 'transparent'
 
