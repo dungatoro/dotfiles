@@ -10,4 +10,5 @@ Applications:
 
 Theming:
 * Orchis GTK theme
-* my rose-pine forks (white background)
+* rose-pine fork (white background)
+
