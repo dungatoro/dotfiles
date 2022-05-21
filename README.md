@@ -5,8 +5,7 @@ Applications:
 * kitty
 * neovim
 * sxhkd
-* spotify (+spicetify)
-* discord (+goosemod)
+* nautilus
 
 Theming:
 * Orchis GTK theme
