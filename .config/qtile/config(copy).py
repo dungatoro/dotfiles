@@ -1,5 +1,5 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
+# Copyright (c) 202 Aldo Cortesi
+# Copyright (c) 202, 2014 dequis
 # Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
 # Copyright (c) 2012 Craig Barnes
@@ -129,14 +129,15 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["minus", "equal", "comma", "period", "f", "g", "c", "z"]
+group_names = ["equal", "comma", "period", "f", "c", "m",]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 "]
-group_labels = ["하나", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟",]
-# group_labels = ["๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘",]
+#group_labels = ["하나", "둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟",]
+group_labels = ["๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘",]
+#group_labels = ["1", "2", "3", "4", "5", "6",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
@@ -160,9 +161,9 @@ for i in groups:
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
+# MOVE WINDOW TO SELECTED WORKSPACE 1-2 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
+# MOVE WINDOW TO SELECTED WORKSPACE 1-2 AND FOLLOW MOVED WINDOW TO WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
@@ -170,8 +171,8 @@ for i in groups:
 def init_layout_theme():
     return {"margin":18,
             "border_width":8,
-            "border_focus": "#ea9d34",
-            "border_normal": "#d7827e"
+            "border_focus": "#8d997f",
+            "border_normal": "#8fa4bb"
             }
 
 layout_theme = init_layout_theme()
@@ -190,7 +191,7 @@ layouts = [
 #Theme name : ArcoLinux Default
 def init_colors():
     return [["#000400", "#000400"], # color 0
-            ["#fafafa", "#fafafa"], # color 1
+            ["#faf4ed", "#faf4ed"], # color 1
             ["#c0c5ce", "#c0c5ce"], # color 2
             ["#fba922", "#fba922"], # color 3
             ["#3384d0", "#3384d0"], # color 4
@@ -208,9 +209,9 @@ colors = init_colors()
 
 def init_widgets_defaults():
     return dict(font="Cartograph CF",
-                fontsize = 16,
+                fontsize = 12,
                 padding = 2,
-                foreground = "#575279",
+                foreground = "#424242",
                 background="#fafafa")
 
 widget_defaults = init_widgets_defaults()
@@ -220,60 +221,33 @@ def init_widgets_list():
     widgets_list = [
                widget.GroupBox(
                         font="FontAwesome",
-                        fontsize = 18,
+                        fontsize = 26,
                         margin_y = 2,
                         margin_x = 0,
                         padding_y = 7,
-                        padding_x = 5,
+                        padding_x = 10,
                         borderwidth = 0,
                         disable_drag = True,
-                        active = "#a8a2bc",
-                        inactive = "#575279",
-                        highlight_color = "#575279",
+                        active = "#8fa4bb",
+                        inactive = "#424242",
+                        highlight_color = "#424242",
                         rounded = False,
                         highlight_method = "text",
-                        block_highlight_text_color = "#575279",
-                        this_current_screen_border = "#ea9d34",
-                        this_screen_border = "#ea9d34",
-                        other_current_screen_border = "#d7827e",
-                        other_screen_border = "#d7827e",
-                        foreground = "#b4637a",
-                        background = colors[1]
+                        block_highlight_text_color = "#424242",
+                        this_current_screen_border = "#8d997f",
+                        this_screen_border = "#8d997f",
+                        background = "#fafafa"
                         ),
-               widget.Sep(
-                        linewidth = 2,
-                        padding = 10,
-                        foreground = "#575279",
-                        ),
-               widget.WindowTabs(
-                        font="Cartograph CF Italic",
-                        fontsize = 16,
-                        foreground = "#575279",
-                        padding = 5
-                        ),
-                widget.OpenWeather(
-                        fontsize = 20,
-                        location = 'Leeds',
-                        format = '{main_temp}°{units_temperature}',
-                        ),
-               widget.Sep(
-                        linewidth = 2,
-                        padding = 10,
-                        foreground = "#575279",
+               widget.Spacer(
                         ),
                widget.Clock(
-                        foreground = "#575279",
-                        fontsize = 20,
+                        foreground = "#424242",
+                        margin_y = -2,
+                        fontsize = 28,
                         format="%H:%M"
-                        ),
-               widget.Sep(
-                        linewidth = 2,
-                        padding = 10,
-                        foreground = "#575279",
                         ),
                 widget.CurrentLayoutIcon(
                         custom_icon_paths = ["/home/dungatoro/.config/qtile/icons/currentLayoutIcons/"],
-                        foreground = "#575279",
                         scale = 0.75,
                         padding = 0
                         ),
@@ -296,8 +270,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=40, opacity=1.0)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=40, opacity=1.0))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=46, border_color=['#fafafa','#fafafa','#fafafa','#fafafa'], border_width=[4,4,4,4], margin=[10,600,-10,600], opacity=1.0)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=46, border_color=['#fafafa','#fafafa','#fafafa','#fafafa'], border_width=[4,4,4,4], margin=[10,200,-10,200], opacity=1.0))]
 screens = init_screens()
 
 

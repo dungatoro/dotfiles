@@ -54,8 +54,8 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 #starting user applications at boot time
 run volumeicon &
-#run discord &
-nitrogen --restore &
+run flameshot &
+feh --bg-center --no-xinerama --randomize ~/Pictures/wallpapers &
 #run caffeine -a &
 #run vivaldi-stable &
 #run firefox &
