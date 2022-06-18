@@ -6,6 +6,7 @@ Applications:
 * neovim
 * sxhkd
 * nautilus
+* picom-jonaburg
 
 Theming:
 * Orchis GTK theme
